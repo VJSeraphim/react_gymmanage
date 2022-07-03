@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
-import { Box } from '@mui/icons-material'
+import { Box } from '@mui/material'
 
 import { exerciseOptions, fetchData } from '../utils/fetchData'
 
@@ -15,7 +15,7 @@ const ExerciseDetails = () => {
     useEffect(() => {
         const fetchExercisesData = async () => {
             const exerciseDbUrl = 'https://exercisedb.p.rapidapi.com'
-            
+            const youtubeSearchUrl = 'https://youtube-search-and-download.p.rapidapi.com'
         }
 
         fetchExercisesData()
