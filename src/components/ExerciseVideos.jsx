@@ -2,6 +2,8 @@ import React from 'react'
 import { Box, Stack, Typography } from '@mui/material'
 
 const ExerciseVideos = ({ name, exerciseVideos}) => {
+  if(!exerciseVideos.length) return 'Loading...'
+  
   return (
     <Box sx={{
       marginTop: {
@@ -31,9 +33,17 @@ const ExerciseVideos = ({ name, exerciseVideos}) => {
             className="exercise-video"
             href={`https://www.youtube.com/watch?v=${item.video.videoId}`}
             rel="noreferrer"
-            target="blank"
+            target="_blank"
           >
             <img src={item.video.thumbnails[0].url} alt={item.video.title}/>
+            <Box>
+              <Typography variant="h5" color="#000">
+                {item.video.title}
+              </Typography>
+              <Typography variant="h6" color="#000">
+                {item.video.channelName}
+              </Typography>
+            </Box>
           </a>
         ))}
       </Stack>
